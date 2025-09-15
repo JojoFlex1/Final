@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { createBrowserClient } from "@/lib/supabase/client"
+import { createClient } from "@/lib/supabase/client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -37,7 +37,7 @@ export default function Dashboard() {
   const [transactions, setTransactions] = useState<PointTransaction[]>([])
   const [loading, setLoading] = useState(true)
   const [activeModal, setActiveModal] = useState<ActiveModal>(null)
-  const supabase = createBrowserClient()
+  const supabase = createClient()
 
   useEffect(() => {
     loadUserData()

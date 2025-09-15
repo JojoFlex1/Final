@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription, SheetHeader } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
 import { Home, QrCode, MapPin, Upload, Award, User, Wallet, Menu, Leaf, TrendingUp } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -76,6 +76,12 @@ export function MainNav() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
+  <SheetHeader>
+    <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
+    <SheetDescription className="sr-only">
+      Side sheet with navigation links and user points
+    </SheetDescription>
+  </SheetHeader>
               <div className="flex flex-col gap-4 mt-8">
                 {/* User Points (Mobile) */}
                 <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
